@@ -20,9 +20,24 @@ function calc() {
     let auf = document.getElementById("netto");
     let hoch = document.getElementById("groß").value;
     let klein = document.getElementById("klein").value;
+     
+    if(auf.checked || hoch.checked){
+        betrag = betrag * hoch;
+    }else {
+        betrag = betrag / hoch;
+    }
+    if(klein.checked || auf.checked){
+        betrag = betrag * klein;
+    }else{
+        betrag = betrag / klein;
+    }
+    console.log(betrag)
+     
 
-    auf.checked ? betrag = betrag * hoch : betrag = betrag / hoch 
-
-    klein.checked ? betrag = betrag * klein : betrag = betrag / klein
+//     auf.checked ? betrag = betrag * hoch : betrag = betrag / hoch ;
+//  console.log(betrag);
+ 
+// document.getElementById("endpreis").innerHTML = `<p>${betrag}</p>`;
 }
- console.log(betrag);
+
+//klein.checked ? betrag = betrag * klein : betrag = betrag / klein
